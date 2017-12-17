@@ -25,3 +25,7 @@ form.signup input:focus + label {
 form.signup .form-group {
 	margin-bottom: 8%;
 }
+
+form.signup input:invalid {
+	border-left: 2px solid #a94442; /* red */
+}
