@@ -1,0 +1,27 @@
+form > div {
+	position: relative;
+}
+
+form.signup label {
+	position: absolute;
+	top: 25%;
+	left: 1%;
+	width: 100%;
+	transition: 0.2s;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
+}
+
+form.signup input:valid + label {
+	margin-top: -7%;
+	font-size: 1.2rem;
+}
+
+form.signup input:focus + label {
+	margin-top: -7%;
+	font-size: 1.2rem;
+}
+
+form.signup .form-group {
+	margin-bottom: 8%;
+}
