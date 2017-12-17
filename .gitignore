@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+/public/js
+npm-debug.log.*
+
 # dependencies
 /node_modules
 
