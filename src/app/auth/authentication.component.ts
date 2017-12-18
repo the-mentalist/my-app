@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'my-authentication',
-  template: `
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './authentication.component.html',
   styles: []
 })
 export class AuthenticationComponent implements OnInit {

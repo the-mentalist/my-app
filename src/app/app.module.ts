@@ -8,6 +8,7 @@ import { SignupComponent } from './auth/signup.component';
 import { AuthenticationComponent } from './auth/authentication.component';
 import { MainComponent } from './main/main.component';
 import { routing } from "./app.routing";
+import { SigninComponent } from './auth/signin.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { routing } from "./app.routing";
     HeaderComponent,
     SignupComponent,
     AuthenticationComponent,
-    MainComponent
+    MainComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
