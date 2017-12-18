@@ -12,7 +12,7 @@ form.signup label {
 	font-weight: normal;
 }
 
-form.signup input:valid + label {
+form.signup input.ng-dirty[required] + label {
 	margin-top: -7%;
 	font-size: 1.2rem;
 }
@@ -23,9 +23,30 @@ form.signup input:focus + label {
 }
 
 form.signup .form-group {
-	margin-bottom: 8%;
+	margin-bottom: 10%;
 }
 
-form.signup input:invalid {
+form.signup input:invalid:focus {
+	border-bottom: 2px solid #a94442;
+}
+
+form.signup input:invalid:not(:focus) {
 	border-left: 2px solid #a94442; /* red */
+}
+
+form.signup input:valid {
+	border-left: 2px solid #00FF00; /* green */
+	border-right: 2px solid #00FF00;
+}
+
+.hidden {
+	transition: 2s;
+}
+
+.error {
+	font-size: 90%;
+	font-family: 'Oswald', sans-serif;
+	color: #a20000;
+	float: right;
+	margin-top: 1%; 
 }
