@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
+import { Router } from '@angular/router';
 
 import { User } from "./user.model";
+import { AuthenticationService } from './authentication.service';
 
 @Component({
   selector: 'my-signup',
@@ -9,14 +11,20 @@ import { User } from "./user.model";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-	model: User;
-	cpassword = '45';
-  constructor() {}
+	model = new User();
+  constructor(private authService: AuthenticationService, private router: Router) {}
 
   ngOnInit() {
   }
-  onSubmit(form: ngForm) {
-  	console.log(form);
+  onSubmit() {
+  	this.authService.signup(this.model)
+  	.subscribe(
+  		data => {
+  			console.log(data);
+  			this.router.navigateByUrl('/auth/signin');
+  		},
+  		error => console.log(error)
+  		);
   }
 
 }
