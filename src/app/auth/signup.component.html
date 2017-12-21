@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-1">
-		<form class="signup" (ngSubmit)="onSubmit()" #f="ngForm" ngNativeValidate>
+		<form class="signup" (ngSubmit)="onSubmit()" #f="ngForm" ngNativeValidate [@flyInOut]="'in'">
 			<div class="form-group">
 				<input type="email" class="form-control" id="email" required name="email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]+" [(ngModel)]="model.email" #email="ngModel">
 				<label for="email">Email</label>

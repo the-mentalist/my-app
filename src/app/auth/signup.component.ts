@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import { User } from "./user.model";
 import { AuthenticationService } from './authentication.service';
@@ -8,7 +9,16 @@ import { AuthenticationService } from './authentication.service';
 @Component({
   selector: 'my-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  animations: [
+		trigger('flyInOut', [
+			state('in', style({transform: 'translateX(0)'})),
+			transition('void => *', [
+				style({transform: 'translateX(+100%)'}),
+				animate('0.3s ease-in-out')
+			])
+		])
+	]
 })
 export class SignupComponent implements OnInit {
 	model = new User();
