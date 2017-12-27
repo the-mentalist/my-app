@@ -44,9 +44,15 @@ form.signup input:valid {
 }
 
 .error {
-	font-size: 90%;
-	font-family: 'Oswald', sans-serif;
 	color: #a20000;
 	float: right;
 	margin-top: 1%; 
+}
+
+.error-icon {
+	font-size: 80%;
+}
+
+.error-text {
+	font-family: 'Roboto', sans-serif;
 }

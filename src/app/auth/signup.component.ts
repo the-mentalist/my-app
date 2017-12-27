@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -22,9 +22,14 @@ import { AuthenticationService } from './authentication.service';
 })
 export class SignupComponent implements OnInit {
 	model = new User();
-  constructor(private authService: AuthenticationService, private router: Router) {}
+  constructor(private authService: AuthenticationService,
+    private router: Router,
+    private renderer: Renderer2,
+    private el: ElementRef) {}
 
   ngOnInit() {
+    this.renderer.addClass(this.el.nativeElement.ownerDocument.body, 'bg-new');
+    // remove this class after successful submission
   }
   onSubmit() {
   	this.authService.signup(this.model)
