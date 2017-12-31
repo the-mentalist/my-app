@@ -28,8 +28,11 @@ export class SignupComponent implements OnInit {
     private el: ElementRef) {}
 
   ngOnInit() {
+    //link hide event
+    this.authService.toggleSignupLink(false);
     this.renderer.addClass(this.el.nativeElement.ownerDocument.body, 'bg-new');
-    // remove this class after successful submission
+    // remove this class after successful submission and make link visible
+    // redirect to signin with message
   }
   onSubmit() {
   	this.authService.signup(this.model)
