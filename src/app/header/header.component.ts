@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   	this.authService.toggleLink.subscribe(
-  		(value: boolean) => { console.log('fsds');
+  		(value: boolean) => {
         this.toggleSignupLink(value);}
   		);
   }

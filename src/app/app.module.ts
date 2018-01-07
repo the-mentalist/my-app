@@ -12,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import { routing } from "./app.routing";
 import { SigninComponent } from './auth/signin.component';
 import { AuthenticationService } from './auth/authentication.service';
+import { ThirdpartyComponent } from './auth/thirdparty.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthenticationService } from './auth/authentication.service';
     SignupComponent,
     AuthenticationComponent,
     MainComponent,
-    SigninComponent
+    SigninComponent,
+    ThirdpartyComponent
   ],
   imports: [
     BrowserModule,

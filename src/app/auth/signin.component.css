@@ -1,0 +1,83 @@
+form > div {
+	position: relative;
+}
+
+form.signin label {
+	position: absolute;
+	top: 25%;
+	left: 1%;
+	width: 100%;
+	transition: 0.2s;
+	font-family: 'Raleway', sans-serif;
+	font-weight: normal;
+}
+
+form.signin input {
+	border: 0;
+	outline: none;
+	background: transparent;
+	border-radius: 0;
+	box-shadow: 0px 2px 0px 0px #ebebeb;
+	-webkit-transition: box-shadow 0.3s;
+	transition: box-shadow 0.3s;
+}
+
+form.signin input.ng-dirty[required]:invalid:not(:focus) {
+	box-shadow: 0px 2px 0px 0px #be0000;
+}
+
+form.signin input:focus {
+	box-shadow: 0px 2px 0px 0px #4EA6EA;
+}
+
+form.signin input.ng-dirty[required] + label {
+	margin-top: -7%;
+	font-size: 1.2rem;
+}
+
+form.signin input:focus + label {
+	margin-top: -7%;
+	font-size: 1.2rem;
+}
+
+form.signin .form-group {
+	margin-bottom: 10%;
+}
+
+/*form.signin input:invalid:focus {
+	border-bottom: 2px solid #a94442;
+}
+
+form.signin input:invalid:not(:focus) {
+	border-left: 2px solid #a94442; 	
+}*/
+
+form.signin input:valid {
+	box-shadow: 0px 2px 0px 0px #00FF00; /* green */
+}
+
+.hidden {
+	transition: 2s;
+}
+
+.error {
+	color: #a20000;
+	float: right;
+	margin-top: 1%; 
+}
+
+.error-icon {
+	font-size: 80%;
+}
+
+.error-text {
+	font-family: 'Roboto', sans-serif;
+}
+
+.verticalline {
+	border-right: 3px solid rgb(174, 174, 174);
+}
+
+.btn {
+	margin-right: 5%;
+}

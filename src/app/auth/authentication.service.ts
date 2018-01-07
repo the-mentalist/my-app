@@ -8,6 +8,9 @@ import { User } from './user.model';
 @Injectable()
 export class AuthenticationService {
 	@Output() toggleLink: EventEmitter<boolean> = new EventEmitter<boolean>();
+	signedUp: EventEmitter<boolean> = new EventEmitter<boolean>();
+	isSignup: EventEmitter<boolean> = new EventEmitter<boolean>();
+	isLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 	constants = {
 		'URL': 'http://localhost:3000',
@@ -16,7 +19,21 @@ export class AuthenticationService {
 	constructor(private http: Http) {}
 
 	toggleSignupLink(value: boolean) {
+		// subscribed in header
 		this.toggleLink.emit(value);
+	}
+
+	showSignUpMsg(value: boolean) {
+		// display caption of successful signed up message
+		this.signedUp.emit(value);
+	}
+
+	isSignUp(value: boolean) {
+		this.isSignup.emit(value);
+	}
+
+	isLogIn(value: boolean) {
+		this.isLogin.emit(value);
 	}
 
 	signup(user: User) {

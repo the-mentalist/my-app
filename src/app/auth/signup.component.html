@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-6 col-md-offset-1">
+	<div class="col-md-6 col-md-offset-1 verticalline">
 		<form class="signup" (ngSubmit)="onSubmit()" #f="ngForm" ngNativeValidate [@flyInOut]="'in'">
 			<div class="form-group">
 				<input type="email" class="form-control" id="email" required name="email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]+" [(ngModel)]="model.email" #email="ngModel">
@@ -29,7 +29,8 @@
 					<span class="glyphicon glyphicon-remove error-icon"></span><small class="error-text">Password mismatch</small>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary" [disabled]="!f.valid || !(cpassword.value == password.value)">Register</button>
+			<button type="submit" class="btn btn-primary" [disabled]="!f.valid || !(cpassword.value == password.value)">Create Account</button>
 		</form>
 	</div>
+	<app-thirdparty></app-thirdparty>
 </div>

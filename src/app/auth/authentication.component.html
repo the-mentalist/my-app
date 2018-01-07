@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
 	<div class="col-md-8 col-md-offset-2 auth-box">
 		<div class="row">
 			<ul class="nav col-md-offset-2 nav-pills">
@@ -6,6 +6,28 @@
 				<div class="col-md-1" style="font-size: 3rem; padding-left:4%">|</div>
 				<li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['signup']">Register</a></li>
 			</ul>
+		</div>
+		<router-outlet></router-outlet>
+	</div>
+</div> -->
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 auth-box">
+		<div class="row">
+			<div class="col-md-offset-2">
+				<h2 class="head" [hidden]="!isSignup">Create A New Account</h2>
+				<!-- check signin -->
+				<h2 class="head" [hidden]="!isLogin">Login to Your Account</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-1">
+				<!-- signup page msg -->
+				<label [hidden]="!isSignup">Come join our community! Let's setup your account. Already have one? <a [routerLink]="['signin']">SignIn</a></label>
+				<!-- login page msg -->
+				<label [hidden]="!(isLogin && !signedUp)">Don't have an account? Come join our community! <a [routerLink]="['signup']">SignUp</a></label>
+				<!-- different message when signuped -->
+				<label [hidden]="!signedUp">Voila! Account created! See it was so easy</label>
+			</div>
 		</div>
 		<router-outlet></router-outlet>
 	</div>
